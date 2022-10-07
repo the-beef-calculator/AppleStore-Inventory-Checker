@@ -2,7 +2,7 @@
 Program that contact's Apple's API and checks to see if a product is in-stock. Will notify via SMS when there is!
 
 
-# Libaries Used / Important Notes
+# Libraries Used / Important Notes
 
 This program utilizes GSON, Google's JSON Serializer/Deserializer library. In order for this program to work, you must have the Maven or Gradle dependency
 added. 
