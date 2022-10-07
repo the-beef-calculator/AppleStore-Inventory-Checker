@@ -1,4 +1,3 @@
-package gson;
 import com.google.gson.*;
 import java.io.IOException;
 import java.net.URI;
