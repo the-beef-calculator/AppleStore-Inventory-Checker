@@ -90,7 +90,7 @@ public class Main {
 			if (AppleStore.isAvailable() == true)
 			{
 				System.out.println("Product is now available!");
-				Message message = Message.creator(new PhoneNumber("+19542974455"), new PhoneNumber(auth.getTWILIO_PHONE()), 
+				Message message = Message.creator(new PhoneNumber(auth.getMY_PHONE_NUMBER()), new PhoneNumber(auth.getTWILIO_PHONE()), 
 						"The Requested Product " + AppleStore.getProductName() + " is now available for pickup at the " + AppleStore.getStoreName()
 						+ " location!")
 						.create();
