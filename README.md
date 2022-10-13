@@ -15,3 +15,7 @@ The auth.java file will contain all your authentication details with twilio, so 
 # Screenshot from the program in action 
 
 <img width="758" alt="Screen Shot 2022-10-13 at 03 36 46" src="https://user-images.githubusercontent.com/77137812/195533965-c90d6a31-f8c1-4f1e-afdc-d3a66fcc5256.png">
+
+# Finding the part number and store number
+
+I do plan on adding a list of all the US apple retail stores, but adding a list of all the part numbers seems like a fool's errand, as they are not easy to find and Apple typically has them tucked away in some random article on their website. Nevertheless, I'll try to at least get the part numbers of the most popular items. 
