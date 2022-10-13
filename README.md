@@ -20,7 +20,7 @@ The auth.java file will contain all your authentication details with twilio, so 
 
 I do plan on adding a list of all the US apple retail stores, but will limit part numbers only to the most popular purchases (iPhones, iPads, MacBooks and possible Apple Watches) 
 
-## iPhones
+## iPhones (US Only)
 
 ### iPhone 14 Pro Max
 
