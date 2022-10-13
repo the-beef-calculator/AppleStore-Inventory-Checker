@@ -24,12 +24,13 @@ I do plan on adding a list of all the US apple retail stores, but adding a list 
 
 ### iPhone 14 Pro Max
 
-**Deep Purple** 
+|  **Deep Purple** | **Silver**         | **Gold**          | **Space Black**   |
+| ---------------- | ------------------ | ----------------- | ----------------- |
+| 128GB - MQ8R3LL/A| 128GB - MQ8P3LL/A  | 128GB - MQ8Q3LL/A | 128GB - MQ8N3LL/A |
+| 256GB - MQ8W3LL/A| 256GB - MQ8U3LL/A  | 256GB - MQ8V3LL/A | 256GB - MQ8T3LL/A |
+| 512GB - MQ913LL/A| 512GB - MQ8Y3LL/A  | 512GB - MQ903LL/A | 512GB - MQ8X3LL/A |
+| 1TB   - MQ953LL/A| 1TB - MQ933LL/A    | 1TB - MQ943LL/A   | 1TB - MQ923LL/A   |
 
-- 128GB - MQ8R3LL/A
 
-- 256GB - MQ8W3LL/A
 
-- 512GB - MQ913LL/A
 
-- 1TB   - MQ953LL/A
