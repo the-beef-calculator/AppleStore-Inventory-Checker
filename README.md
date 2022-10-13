@@ -31,6 +31,17 @@ I do plan on adding a list of all the US apple retail stores, but will limit par
 | 512GB - MQ913LL/A| 512GB - MQ8Y3LL/A  | 512GB - MQ903LL/A | 512GB - MQ8X3LL/A |
 | 1TB   - MQ953LL/A| 1TB - MQ933LL/A    | 1TB - MQ943LL/A   | 1TB - MQ923LL/A   |
 
+### iPhone 14 Pro
+
+|  **Deep Purple** | **Silver**         | **Gold**          | **Space Black**   |
+| ---------------- | ------------------ | ----------------- | ----------------- |
+| 128GB - MQ0E3LL/A| 128GB - MQ003LL/A  | 128GB - MQ063LL/A | 128GB - MPXT3LL/A |
+| 256GB - MQ1D3LL/A| 256GB - MMQ0X3LL/A | 256GB - MQ163LL/A | 256GB - MQ0N3LL/A |
+| 512GB - MQ273LL/A| 512GB - MQ1U3LL/A  | 512GB - MQ213LL/A | 512GB - MQ1K3LL/A |
+| 1TB   - MQ303LL/A| 1TB - MQ2L3LL/A    | 1TB - MQ2T3LL/A   | 1TB - MQ2E3LL/A   |
+
+
+
 
 
 
