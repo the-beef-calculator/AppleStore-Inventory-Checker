@@ -18,7 +18,7 @@ The auth.java file will contain all your authentication details with twilio, so 
 
 # Finding the part number and store number
 
-I do plan on adding a list of all the US apple retail stores, but adding a list of all the part numbers seems like a fool's errand, as apple has hundreds, of different part numbers and they are not easy to find on Apple's website. . Nevertheless, I'll try to at least get the part numbers of the most popular items (iPhones, iPads, MacBooks) 
+I do plan on adding a list of all the US apple retail stores, but will limit part numbers only to the most popular purchases (iPhones, iPads, MacBooks and possible Apple Watches) 
 
 ## iPhones
 
