@@ -86,6 +86,13 @@ public class main {
 			System.out.println("Contacting server...");
 			HttpResponse<String> getResponse2 = sendRequest(url);
 			verifyCode(getResponse2.statusCode());
+			if (getResponse2.statusCode() == 503)
+			{
+				Thread.sleep(30000);
+				continue;
+			}
+			
+			
 
 			JsonObject JsonObject2 = gson.fromJson(getResponse.body(), JsonObject.class);
 			
@@ -116,6 +123,7 @@ public class main {
 	public static HttpResponse<String> sendRequest(String url) throws IOException, InterruptedException, URISyntaxException
 	{
 		HttpResponse<String> getResponse;
+		
 		try {
 		HttpRequest getRequest = HttpRequest.newBuilder()
 				.uri(new URI(url))
@@ -149,7 +157,12 @@ public class main {
 			System.out.println("Error Code: " + statusCode);
 			System.exit(2);
 		}
-		else 
+		else if (statusCode == 503)
+		{
+			System.out.println("Server returned error code 503. Retrying in 30 seconds...");
+			
+		}
+		else
 		{
 			System.out.println("Server has completed request.");
 		}
