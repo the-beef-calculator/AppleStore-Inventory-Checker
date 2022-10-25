@@ -86,8 +86,10 @@ public class main {
 			System.out.println("Contacting server...");
 			HttpResponse<String> getResponse2 = sendRequest(url);
 			verifyCode(getResponse2.statusCode());
+			
 			if (getResponse2.statusCode() == 503)
 			{
+				System.out.println("Server returned error 503. Retrying in 30 seconds...");
 				Thread.sleep(30000);
 				continue;
 			}
@@ -106,6 +108,7 @@ public class main {
 						"The requested product " + AppleStore.getProductName() + " is now available at the " + AppleStore.getStoreName()
 						+ " location! The program checked Apple's website a total of " + timesChecked + " times.")
 						.create();
+				
 				System.out.println("SMS has now been sent to " + auth.getMY_PHONE_NUMBER()+".");
 				System.exit(0);
 			}
@@ -151,16 +154,17 @@ public class main {
 	
 	public static void verifyCode(int statusCode)
 	{
+		if (statusCode == 503)
+		{
+			System.out.println("Server returned error code 503. Retrying in 30 seconds...");
+			return;
+			
+		}
 		if (statusCode != 200)
 		{
 			System.out.println("Server returned an error code.");
 			System.out.println("Error Code: " + statusCode);
 			System.exit(2);
-		}
-		else if (statusCode == 503)
-		{
-			System.out.println("Server returned error code 503. Retrying in 30 seconds...");
-			
 		}
 		else
 		{
