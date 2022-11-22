@@ -1,4 +1,3 @@
-package gson;
 
 public class AppleStore {
 	private String storeName,productName,pickupQuote;
