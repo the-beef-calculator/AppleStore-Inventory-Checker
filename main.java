@@ -6,7 +6,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.net.http.HttpTimeoutException;
+import java.time.Duration;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
@@ -85,14 +89,13 @@ public class main {
 			
 			System.out.println("Contacting server...");
 			HttpResponse<String> getResponse2 = sendRequest(url);
-			verifyCode(getResponse2.statusCode());
 			
-			if (getResponse2.statusCode() == 503)
+			if (verifyCode(getResponse2.statusCode()) == false)
 			{
-				System.out.println("Server returned error 503. Retrying in 30 seconds...");
-				Thread.sleep(30000);
+				timesChecked--;
 				continue;
 			}
+				
 			
 			
 
@@ -131,6 +134,7 @@ public class main {
 		HttpRequest getRequest = HttpRequest.newBuilder()
 				.uri(new URI(url))
 				.GET()
+				.timeout(Duration.ofSeconds(12))
 				.build();
 		
 		HttpClient httpClient = HttpClient.newHttpClient();
@@ -146,29 +150,33 @@ public class main {
 			return sendRequest(url);
 			
 		}
+		catch(HttpTimeoutException HTE)
+		{
+			System.out.println("Connection Timed out... Retrying.");
+			return sendRequest(url);
+		}
 		
 		
 		
 		
 	}
 	
-	public static void verifyCode(int statusCode)
+	public static boolean verifyCode(int statusCode) throws InterruptedException
 	{
-		if (statusCode == 503)
-		{
-			System.out.println("Server returned error code 503. Retrying in 30 seconds...");
-			return;
-			
-		}
 		if (statusCode != 200)
 		{
 			System.out.println("Server returned an error code.");
 			System.out.println("Error Code: " + statusCode);
-			System.exit(2);
+			System.out.println("Trying again in 30 seconds...");
+			Thread.sleep(30000);
+			
+			return false;
+			
 		}
 		else
 		{
 			System.out.println("Server has completed request.");
+			return true;
 		}
 	}
 	
@@ -248,6 +256,7 @@ public class main {
 		return AppleStore;
 	}
 	
+}
 	
 	
-}	
+	
