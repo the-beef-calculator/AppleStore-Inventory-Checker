@@ -6,11 +6,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.net.http.HttpTimeoutException;
 import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
@@ -49,7 +47,13 @@ public class main {
 	
 	HttpResponse<String> getResponse = sendRequest(url);
 	
-	verifyCode(getResponse.statusCode()); 
+	while (verifyCode(getResponse.statusCode()) == false)
+	{
+		System.out.println("Retrying in 30 seconds...");
+		Thread.sleep(30000);
+		getResponse = sendRequest(url);
+		
+	}
 	
 	String verifyInputs = getResponse.body();
 	
@@ -82,21 +86,24 @@ public class main {
 		Twilio.init(auth.getACCOUNT_SID(), auth.getAUTH_TOKEN());
 		
 		int timesChecked = 1;
+		int errorCodes = 0;
 		while (true)
 		{
 			Thread.sleep(90000);  // wait 1 minute 30 seconds before trying again
 			timesChecked++;
 			
 			System.out.println("Contacting server...");
+			
 			HttpResponse<String> getResponse2 = sendRequest(url);
 			
 			if (verifyCode(getResponse2.statusCode()) == false)
 			{
+				System.out.println("Retrying in 30 seconds...");
+				Thread.sleep(30000);
+				errorCodes++;
 				timesChecked--;
 				continue;
 			}
-				
-			
 			
 
 			JsonObject JsonObject2 = gson.fromJson(getResponse.body(), JsonObject.class);
@@ -115,7 +122,7 @@ public class main {
 				System.out.println("SMS has now been sent to " + auth.getMY_PHONE_NUMBER()+".");
 				System.exit(0);
 			}
-			System.out.println("Times Checked: " + timesChecked);	
+			System.out.println("Times Checked: " + timesChecked + "\n" + "The server has returned " + errorCodes + " error codes so far.");	
 			}
 	}
 	else
@@ -134,7 +141,7 @@ public class main {
 		HttpRequest getRequest = HttpRequest.newBuilder()
 				.uri(new URI(url))
 				.GET()
-				.timeout(Duration.ofSeconds(12))
+				.timeout(Duration.of(10, ChronoUnit.SECONDS)) // connection will time out after 10 seconds in case the request hangs
 				.build();
 		
 		HttpClient httpClient = HttpClient.newHttpClient();
@@ -145,14 +152,15 @@ public class main {
 		}
 		catch(java.net.ConnectException JNC)
 		{
-			System.out.println("Connection Error... Trying again in 30 seconds.");
+			System.out.println("Connection lost... Trying again in 30 seconds.");
 			Thread.sleep(30000);
 			return sendRequest(url);
 			
 		}
-		catch(HttpTimeoutException HTE)
+		catch(java.net.http.HttpTimeoutException HTE)
 		{
-			System.out.println("Connection Timed out... Retrying.");
+			System.out.println("Connection timed out... Trying again in 5 seconds.");
+			Thread.sleep(5000);
 			return sendRequest(url);
 		}
 		
@@ -161,21 +169,17 @@ public class main {
 		
 	}
 	
-	public static boolean verifyCode(int statusCode) throws InterruptedException
+	public static boolean verifyCode(int statusCode)
 	{
+		
 		if (statusCode != 200)
 		{
-			System.out.println("Server returned an error code.");
-			System.out.println("Error Code: " + statusCode);
-			System.out.println("Trying again in 30 seconds...");
-			Thread.sleep(30000);
-			
+			System.out.println("Server returned error code: " + statusCode + "\n");
 			return false;
-			
 		}
 		else
 		{
-			System.out.println("Server has completed request.");
+			System.out.println("Server has completed request. \n");
 			return true;
 		}
 	}
@@ -256,7 +260,6 @@ public class main {
 		return AppleStore;
 	}
 	
-}
 	
 	
-	
+}	
