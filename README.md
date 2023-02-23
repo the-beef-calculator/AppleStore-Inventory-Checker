@@ -1,8 +1,3 @@
-# AppleStore-Inventory-Checker
-Program that contact's Apple's API and checks to see if a product is in-stock. Will notify via SMS when there is!
-
-It is important to note that **at this time, only Apple locations inside the US are supported.**
-
 # Libraries Used / Important Notes
 
 This program utilizes GSON, Google's JSON Serializer/Deserializer library. In order for this program to work, you must have the Maven or Gradle dependency
@@ -12,6 +7,9 @@ This program also uses the Twilio library in order to send SMS text messages. In
 /Gradle dependencies
 
 The auth.java file will contain all your authentication details with twilio, so make sure you update your information there so that text message functionality will work. 
+
+
+**It is important to note that at this time, only Apple locations inside the US are supported.**
 
 # Screenshot of the program in action 
 
