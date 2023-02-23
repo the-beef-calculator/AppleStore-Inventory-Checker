@@ -1,6 +1,7 @@
 # AppleStore-Inventory-Checker
 Program that contact's Apple's API and checks to see if a product is in-stock. Will notify via SMS when there is!
 
+It is important to note that **at this time, only Apple locations inside the US are supported.**
 
 # Libraries Used / Important Notes
 
