@@ -6,7 +6,7 @@ added.
 This program also uses the Twilio library in order to send SMS text messages. In order to use their service, you must sign up for an account at https://www.twilio.com/ and use the authentication codes they give you, as well as adding their respectred Maven
 /Gradle dependencies
 
-The auth.java file will contain all your authentication details with twilio, so make sure you update your information there so that text message functionality will work. 
+The auth.java file will contain all your authentication details with twilio, so make sure you update your information there so that text message functionality will work, (or you can read them in from a text file, instead)
 
 
 **It is important to note that at this time, only US Apple Locations are supported.**
