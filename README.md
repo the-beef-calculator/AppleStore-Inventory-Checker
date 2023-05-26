@@ -2,7 +2,7 @@
 
 This program utilizes GSON, Google's JSON Serializer/Deserializer library. Ensure that you have added the Maven or Gradle dependency for it to function properly.
 
-Additionally, the program utilizes the Twilio library for sending SMS text messages. To use this feature, you need to sign up for an account here and include the provided authentication codes. Make sure to add the corresponding Twilio Maven/Gradle dependencies.
+Additionally, the program utilizes the Twilio library for sending SMS text messages. To use this feature, you need to sign up for an account [here](https://www.twilio.com/) and include the provided authentication codes. Make sure to add the corresponding Twilio Maven/Gradle dependencies.
 
 Please update the auth.java file with your Twilio authentication details to enable text message functionality. Alternatively, you can also read the information from a text file.
 
