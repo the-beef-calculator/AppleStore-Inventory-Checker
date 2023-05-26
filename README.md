@@ -8,8 +8,9 @@ This program also uses the Twilio library in order to send SMS text messages. In
 
 The auth.java file will contain all your authentication details with twilio, so make sure you update your information there so that text message functionality will work, (or you can read them in from a text file, instead)
 
+One final thing to note, the api that is being used is undocumented (because Apple) and could be modified or changed at any time, bricking this program. 
 
-**It is important to note that at this time, only US Apple Locations are supported.**
+**It is important to note that at this time, only US Apple Retail Locations are supported.**
 
 # Screenshot of the program in action 
 
