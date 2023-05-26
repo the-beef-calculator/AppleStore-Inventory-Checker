@@ -10,6 +10,8 @@ It's crucial to note that the API used by this program is undocumented (because 
 
 **Also, please note that currently only US Apple Retail Locations are supported.**
 
+I plan on overhauling this program soon since It's been nearly a year since I wrote this, and I've learned much more :) 
+
 
 # Screenshot of the program in action 
 
