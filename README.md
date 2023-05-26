@@ -1,16 +1,15 @@
 # Libraries Used / Important Notes
 
-This program utilizes GSON, Google's JSON Serializer/Deserializer library. In order for this program to work, you must have the Maven or Gradle dependency
-added. 
+This program utilizes GSON, Google's JSON Serializer/Deserializer library. Ensure that you have added the Maven or Gradle dependency for it to function properly.
 
-This program also uses the Twilio library in order to send SMS text messages. In order to use their service, you must sign up for an account [here](https://www.twilio.com/) and use the authentication codes they give you, as well as adding their respectred Maven
-/Gradle dependencies
+Additionally, the program utilizes the Twilio library for sending SMS text messages. To use this feature, you need to sign up for an account here and include the provided authentication codes. Make sure to add the corresponding Twilio Maven/Gradle dependencies.
 
-The auth.java file will contain all your authentication details with twilio, so make sure you update your information there so that text message functionality will work, (or you can read them in from a text file, instead)
+Please update the auth.java file with your Twilio authentication details to enable text message functionality. Alternatively, you can also read the information from a text file.
 
-One final thing to note, the api that is being used is undocumented (because Apple) and could be modified or changed at any time, bricking this program. 
+It's crucial to note that the API used by this program is undocumented (because this is Apple we're talking about) and subject to potential modifications or changes, which may render the program ineffective.
 
-**It is important to note that at this time, only US Apple Retail Locations are supported.**
+**Also, please note that currently only US Apple Retail Locations are supported.**
+
 
 # Screenshot of the program in action 
 
