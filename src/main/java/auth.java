@@ -1,5 +1,3 @@
-package gson;
-
 public class auth {
 
 	private final String ACCOUNT_SID = "[Your Twilio Account SID]";
