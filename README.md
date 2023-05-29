@@ -12,6 +12,17 @@ It's crucial to note that the API used by this program is undocumented (because 
 
 I plan on overhauling this program soon since It's been nearly a year since I wrote this, and I've learned much more :) 
 
+# How to Use
+
+1. Clone this repository.
+2. If you plan on enabling text message notifications, sign up for a twilio acocunt [here.](https://www.twilio.com/)
+3. Enter your twilio information into the auth.java file.*
+4. Run the program. 
+5. Keep your computer awake with a stable internet connection.**
+
+*Hard coding sensitive API information is an unsafe coding practice and is generally frowned upon. This will be updated soon!
+*I've written exceptions for many of the possible issues (such as a loss of internet connection), though this is generally inefficient and I've learned is better suited towards utilizating the Spring framework, which I'll work to incorporate this project soon.
+
 
 # Screenshot of the program in action 
 
