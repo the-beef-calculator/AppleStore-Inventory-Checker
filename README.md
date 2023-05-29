@@ -20,10 +20,10 @@ I plan on overhauling this program soon since It's been nearly a year since I wr
 4. Run the program. 
 5. Keep your computer awake with a stable internet connection.**
 
-<small>**Note: Hard coding sensitive API information is an unsafe coding practice and is generally frowned upon. This will be updated soon!*</small>
+**Note: Hard coding sensitive API information is an unsafe coding practice and is generally frowned upon. This will be updated soon!*
 
 
-***Note: I've written exceptions for many of the possible issues (such as a loss of internet connection), though this is generally inefficient and I've learned is better suited towards utilizating the Spring framework, which I'll work to incorporate this project soon.*
+***Note: I've written exceptions for many of the possible issues (such as a loss of internet connection), though this is generally inefficient            and I've learned is better suited towards utilizating the Spring framework, which I'll work to incorporate this project soon.*
 
 
 # Screenshot of the program in action 
