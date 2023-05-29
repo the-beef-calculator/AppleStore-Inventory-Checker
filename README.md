@@ -12,7 +12,7 @@ It's crucial to note that the API used by this program is undocumented (because 
 
 I plan on overhauling this program soon since It's been nearly a year since I wrote this, and I've learned much more :) 
 
-# How to Use
+## How to Use
 
 1. Clone this repository.
 2. If you plan on enabling text message notifications, sign up for a twilio account [here.](https://www.twilio.com/)
