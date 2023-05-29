@@ -15,7 +15,7 @@ I plan on overhauling this program soon since It's been nearly a year since I wr
 # How to Use
 
 1. Clone this repository.
-2. If you plan on enabling text message notifications, sign up for a twilio acocunt [here.](https://www.twilio.com/)
+2. If you plan on enabling text message notifications, sign up for a twilio account [here.](https://www.twilio.com/)
 3. Enter your twilio information into the auth.java file.*
 4. Run the program. 
 5. Keep your computer awake with a stable internet connection.**
