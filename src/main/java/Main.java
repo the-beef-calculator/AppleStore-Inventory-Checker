@@ -21,32 +21,15 @@ public class Main {
 	{
 		Scanner scan = new Scanner(System.in);
 		Gson gson = new Gson();
+
 		UserInventoryData user = new UserInventoryData();
+		user.requestUserInventoryData();
+
+		APIService apiService = new APIService(user.getStoreNumber(), user.getPartialPartNumber());
+		apiService.sendRequest();
 
 		System.out.println("Apple Inventory Checker\n");
 
-		user.requestUserInventoryData();
-
-		System.out.println("Contacting server...");
-
-		String url = "https://www.apple.com/shop/fulfillment-messages?store="+user.getStoreNumber()+"&parts.0="+user.getPartialPartNumber()+"%2FA";
-
-		HttpResponse<String> getResponse = sendRequest(url);
-
-		while (verifyCode(getResponse.statusCode()) == false)
-		{
-			System.out.println("Retrying in 30 seconds...");
-			Thread.sleep(40000);
-			getResponse = sendRequest(url);}
-	
-	String verifyInputs = getResponse.body();
-	
-	if(verifyInputs.contains("errorMessage"))
-	{
-		System.out.println("Server has indicated that either the store number or part number is invalid.");
-		System.exit(3);
-	}
-	
 	
 	
 	System.out.println("\n");
