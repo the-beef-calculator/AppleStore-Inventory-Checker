@@ -38,7 +38,8 @@ public class AppleStore {
 	public void setPickupQuote(String pickupQuote) {
 		this.pickupQuote = pickupQuote;
 	}
-	
+
+
 	public void setAllValues(AppleStore object)
 	{
 		if (object == null)

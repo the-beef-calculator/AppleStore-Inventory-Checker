@@ -19,32 +19,11 @@ public class Main {
 	public static void main(String[] args) throws JsonIOException, JsonSyntaxException, IOException, InterruptedException, URISyntaxException {
 		
 	Gson gson = new Gson();
-	
-	
-	System.out.println("Apple Inventory Checker\n");
-	
-	Scanner scan = new Scanner(System.in);
-	
-	System.out.println("What is the store number?");
-	
-	String storeNumber = scan.nextLine();
-	
-	System.out.println("What is the part number? Enter it without the trailing '/A' at the end. (e.g: MQ8R3LL)");
-	
-	String partNumber = scan.nextLine();
-	
-	storeNumber = storeNumber.replaceAll("\\s", ""); //removes any whitespace if there's any in the input
-	partNumber = partNumber.replaceAll("\\s", "");
-	
-	String completePartNumber = partNumber+"/A";  //API returns JSON with full part name, this is needed to reference the correct field name
-	
-	
-	
-	String url = "https://www.apple.com/shop/fulfillment-messages?store="+storeNumber+"&parts.0="+partNumber+"%2FA";
+
+		System.out.println("Apple Inventory Checker\n");
 	
 	System.out.println("Contacting server...");
-	
-	
+
 	HttpResponse<String> getResponse = sendRequest(url);
 	
 	while (verifyCode(getResponse.statusCode()) == false)
@@ -72,7 +51,6 @@ public class Main {
 	AppleStore AppleStore = new AppleStore(setAllObjectValues(JsonObject, completePartNumber));
 	
 	System.out.println(AppleStore.toString()+"\n");
-		
 	
 	if(AppleStore.isAvailable() == false)
 		{
@@ -249,14 +227,10 @@ public class Main {
 		AppleStore AppleStore = new AppleStore();
 		
 		AppleStore.setPickupQuote(getPickupQuote(object,completePartNumber));
-		
 		AppleStore.setProductName(getProductName(object,completePartNumber));
-		
 		AppleStore.setStoreName(getStoreName(object));
-		
 		AppleStore.setPickupStatus(isAvailable(getPickupQuote(object,completePartNumber)));
-		
-		
+
 		return AppleStore;
 	}
 	
