@@ -1,22 +1,11 @@
 public class auth {
 
-	private final String ACCOUNT_SID;
-	private final String AUTH_TOKEN;
-	private final String TWILIO_PHONE;
-	private final String MY_PHONE_NUMBER;
+	private final String ACCOUNT_SID = "";
+	private final String AUTH_TOKEN = "";
+	private final String TWILIO_PHONE = "";
+	private final String MY_PHONE_NUMBER = "";
 	
-	
-	
-	//method for retrieving relevenat authentication info for Twilio. Not finished yet.  
-	public static String getAuthInfo()
-	{
-		Scanner scan = new Scanner(System.in);
-		File file = new File();
-		
-	}
-		
-	
-	
+
 	
 	public String getACCOUNT_SID() 
 	{

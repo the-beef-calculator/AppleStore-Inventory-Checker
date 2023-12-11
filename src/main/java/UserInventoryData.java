@@ -3,16 +3,20 @@ import java.util.Scanner;
 public class UserInventoryData
 {
     private String storeNumber, partialPartNumber, completePartNumber;
-    Scanner scan = new Scanner(System.in);
+
 
     public void requestUserInventoryData()
     {
+        Scanner scan = new Scanner(System.in);
+
         System.out.println("What is the store number?");
         setStoreNumber(scan.nextLine());
 
         System.out.println("What is the part number? (e.g: MQ8R3LL/A)");
         setCompletePartNumber(scan.nextLine());
         setPartialPartNumber(completePartNumber);
+
+        scan.close();
 
     }
 
@@ -59,8 +63,4 @@ public class UserInventoryData
         this.completePartNumber = completePartNumber;
     }
 
-
-
-
-    String url = "https://www.apple.com/shop/fulfillment-messages?store="+storeNumber+"&parts.0="+partialPartNumber+"%2FA";
 }
