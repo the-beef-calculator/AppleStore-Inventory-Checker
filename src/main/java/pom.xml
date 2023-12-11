@@ -24,5 +24,14 @@
             <artifactId>twilio</artifactId>
             <version>9.2.5</version>
         </dependency>
+
+        <!-- SpringBoot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>3.2.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
     </dependencies>
 </project>

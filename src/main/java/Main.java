@@ -11,28 +11,30 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.rest.chat.v1.service.User;
 import com.twilio.type.PhoneNumber;
 
 
 public class Main {
 
-	public static void main(String[] args) throws JsonIOException, JsonSyntaxException, IOException, InterruptedException, URISyntaxException {
-		
-	Gson gson = new Gson();
+	public static void main(String[] args) throws JsonIOException, JsonSyntaxException, IOException, InterruptedException, URISyntaxException
+	{
+		Gson gson = new Gson();
+		UserInventoryData user = new UserInventoryData();
 
 		System.out.println("Apple Inventory Checker\n");
-	
-	System.out.println("Contacting server...");
 
-	HttpResponse<String> getResponse = sendRequest(url);
-	
-	while (verifyCode(getResponse.statusCode()) == false)
-	{
-		System.out.println("Retrying in 30 seconds...");
-		Thread.sleep(40000);
-		getResponse = sendRequest(url);
-		
-	}
+		user.requestUserInventoryData();
+
+		System.out.println("Contacting server...");
+
+		HttpResponse<String> getResponse = sendRequest(url);
+
+		while (verifyCode(getResponse.statusCode()) == false)
+		{
+			System.out.println("Retrying in 30 seconds...");
+			Thread.sleep(40000);
+			getResponse = sendRequest(url);}
 	
 	String verifyInputs = getResponse.body();
 	

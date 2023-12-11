@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class UserInventoryData {
+public class UserInventoryData
+{
     private String storeNumber, partialPartNumber, completePartNumber;
     Scanner scan = new Scanner(System.in);
 
@@ -9,10 +10,9 @@ public class UserInventoryData {
         System.out.println("What is the store number?");
         setStoreNumber(scan.nextLine());
 
-
         System.out.println("What is the part number? (e.g: MQ8R3LL/A)");
         setCompletePartNumber(scan.nextLine());
-        setPartialPartNumber(this.completePartNumber);
+        setPartialPartNumber(completePartNumber);
 
     }
 
