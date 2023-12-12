@@ -20,10 +20,14 @@ public class APIService
         urlRequest = "https://www.apple.com/shop/fulfillment-messages?store="+storeNumber+"&parts.0="+partialPartNumber+"%2FA";
     }
 
+    public AppleStore startService()
+    {
+        sendRequest();
+    }
+
 
     public Mono<String> sendRequest()
     {
-
         System.out.println("Contacting Server...");
         return webClient.get()
                 .uri(this.urlRequest)

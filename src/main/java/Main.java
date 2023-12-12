@@ -26,9 +26,11 @@ public class Main {
 		user.requestUserInventoryData();
 
 		APIService apiService = new APIService(user.getStoreNumber(), user.getPartialPartNumber());
-		apiService.sendRequest();
+		apiService.startService();
 
-		System.out.println("Apple Inventory Checker\n");
+		ResponseDataParser responseDataParser = new ResponseDataParser()
+
+
 
 	
 	
